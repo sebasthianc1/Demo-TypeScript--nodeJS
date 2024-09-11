@@ -40,9 +40,9 @@ export class LoginOrangeSteps {
     }
     @Then(/^debería ser redirigido a la página principal$/)
     async posiciónGlobal() {
-      
-         //await ((await this.globalPage)).validPosicionGlobal();
-         expect(await ((await this.globalPage)).getDashboardText()).to.contain('Dashboard');
+        //await ((await this.globalPage)).validPosicionGlobal();
+        
+        expect(await ((await this.globalPage)).getDashboardText()).to.contain('Dashboard');
 
     }
 

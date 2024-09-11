@@ -1,7 +1,7 @@
 import {Page, PageContext} from "@testing/wdio-page-objects";
 
 const select = {
-    dashboard:`[class='oxd-main-menu-item active'] [class='oxd-text oxd-text--span oxd-main-menu-item--name']`,
+    dashboard:'.oxd-topbar-header-breadcrumb',
     header:'header[class="oxd-topbar"]',
     layout:'[class="oxd-layout-context"]',
     footer:'[class="oxd-layout-footer"]',
