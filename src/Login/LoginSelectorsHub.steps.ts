@@ -24,18 +24,21 @@ export class LoginOrangeSteps {
         return user;
     }
 
-    @Given(/^que estoy en la página de inicio de sesión$/)
+    async form(){
+
+        const form = this.varDatamanager()
+        const {userNameInput, pizzaNameInput, conceptTestInput, passwordInput}= form
+        return await form
+    }
+
+    @Given(/^que estoy en la página de selectorHub$/)
     async sesion() {
-        await pageProvider.go(LoginSelectorsHubPage); //
+        await pageProvider.go(LoginSelectorsHubPage); 
     }
     @When(/^ingreso  datos en el formulario$/)
     async credenciales() {
-        const credentials = this.varDatamanager();
-        const {username, password} = credentials;
-        await ((await this.LoginSelectorsHubPage)).completarFormulario();  
+        const form = await this.form();
+        await ((await this.LoginSelectorsHubPage)).completarFormulario(form.userNameInput, form.pizzaNameInput, form.conceptTestInput, form.passwordInput )
     }
-
-
-
     
 }

@@ -1,9 +1,10 @@
 @IngresoSelectorsHub
 
-Feature: Inicio de Sesión en una Aplicación
+Feature: Formulario Clientes
 
-  Scenario: Inicio de Sesión Exitoso
-    Given I'm a user with tags "login" [framework]
-    Given ingreso  datos en el formulario
+  Scenario: Diligenciamiento formulario
+   #Given I'm a user with tags "login" [framework]
+    Given que estoy en la página de selectorHub
+    When ingreso  datos en el formulario
 
     

@@ -14,11 +14,12 @@ const select = {
 
 @PageContext({
     path: '/xpath-practice-page/', 
-    wrapper: `[id="page"]`, //Padre  o nodo principal
+    wrapper: `[id="page"]`, 
 })
 export class LoginSelectorsHubPage extends Page {
 
-    async completarFormulario() {
+    async completarFormulario(userNameInput: String, pizzaNameInput: String, conceptTestInput: String, passwordInput: String) {
+     
         await (await $(select.userNameShadowRoot)).click()
         await (await $(select.userNameInput)).setValue("Charly")
  
@@ -26,9 +27,9 @@ export class LoginSelectorsHubPage extends Page {
         await (await $(select.pizzaNameInput)).setValue("Pepperoni")
  
         await (await $(select.conceptTestInputShadowRoot)).click()
-        await (await $(select.conceptTestInputShadowRoot)).setValue("Prueba Automatizada")
+        await (await $(select.conceptTestInput)).setValue("Prueba Automatizada")
  
         await (await $(select.passwordInputShadowRoot)).click()
-        await (await $(select.passwordInputShadowRoot)).setValue("Test.1234")
+        await (await $(select.passwordInput)).setValue("Test.1234")
     }
 }
